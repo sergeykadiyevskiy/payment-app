@@ -53,12 +53,12 @@ const Pay = () => {
         <button
           style={{
             border: "none",
-            width: 120,
             borderRadius: 5,
-            padding: "20px",
+            width: 120,
             backgroundColor: "black",
             color: "white",
             fontWeight: "600",
+            padding: "20px",
             cursor: "pointer",
           }}
         >
