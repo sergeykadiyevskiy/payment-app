@@ -1,5 +1,6 @@
 import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
 const axios = require('axios')
 
 const KEY =
@@ -7,6 +8,7 @@ const KEY =
 
 const Pay = () => {
   const [stripeToken, setStripeToken] = useState(null);
+  const navigate = useNavigate()
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -23,13 +25,14 @@ const Pay = () => {
           }
         );
 
+        navigate("/success")
         console.log(res.data)
       } catch (err) {
         console.log(err);
       }
     }
     stripeToken && makeRequest()
-  }, [stripeToken]);
+  }, [stripeToken, navigate]);
 
   return (
     <div
@@ -40,8 +43,11 @@ const Pay = () => {
         justifyContent: "center",
       }}
     >
+{console.log(stripeToken)}
+    {/* {stripeToken ? (<span>Processing. Please wait...</span>) : ( */}
+
       <StripeCheckout
-        name="Styles By Serve"
+        name="Styles By Serge"
         image="https://avatars.githubusercontent.com/u/51814805?v=4"
         billingAddress
         shippingAddress
@@ -65,6 +71,7 @@ const Pay = () => {
           Pay Now
         </button>
       </StripeCheckout>
+    {/* )} */}
     </div>
   );
 };
