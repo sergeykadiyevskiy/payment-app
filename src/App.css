@@ -18,8 +18,8 @@
   min-height: 100vh;
   display: flex;
   color: white;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   align-items: center;
 }
