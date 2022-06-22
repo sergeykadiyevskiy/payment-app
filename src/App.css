@@ -17,8 +17,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: #282c34;
   align-items: center;
+  background-color: #282c34;
   color: white;
   font-size: calc(10px + 2vmin);
   min-height: 100vh;
